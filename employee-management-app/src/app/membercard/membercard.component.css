@@ -1,0 +1,29 @@
+.membercard-container {
+  background-color: #fda16e;
+  margin-top: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  height: 200px;
+}
+
+.first-name {
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.membercard-button {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.fapen {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.faxmark {
+  cursor: pointer;
+}

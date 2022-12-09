@@ -1,0 +1,58 @@
+.team-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 250px;
+  margin-top: 168px;
+}
+
+.team-title-right {
+  display: flex;
+  align-items: center;
+}
+
+.add-team-button-container {
+  padding-right: 20px;
+}
+
+.add-team-button {
+  background: #f9b1a2;
+  text-decoration: none;
+  border: 2px solid #f9b1a2;
+  border-radius: 30px;
+  padding: 9px 22px;
+  color: #23201f;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 80px;
+  cursor: pointer;
+}
+
+.add-team-button:hover {
+  border: 2px solid #23201f;
+}
+
+.viewall {
+  font-size: 14px;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.team-title-left {
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.membercard-list {
+  display: flex;
+  justify-content: space-between;
+  width: 720px;
+  flex-wrap: wrap;
+}
+
+.membercard {
+  flex: 0 0 33.333333%;
+}

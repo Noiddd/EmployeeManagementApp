@@ -1,6 +1,6 @@
 .date {
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .search {
@@ -15,10 +15,9 @@
 
 .search-input {
   height: 40px;
-  width: 500px;
+  width: 850px;
   border-radius: 20px;
   border: none;
-  width: 900px;
   padding: 10px;
   padding-left: 40px;
   font-size: 20px;
@@ -29,20 +28,22 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 77px;
-  left: 880px;
+  top: 88px;
+  left: 825px;
 }
 
 .project-title {
   display: flex;
   justify-content: space-between;
-  padding-left: 15px;
-  padding-right: 50px;
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 107px;
   margin-top: 50px;
 }
 
 .project-title-right {
   display: flex;
+  align-items: center;
 }
 
 .add-project-button-container {
@@ -50,4 +51,31 @@
 }
 
 .add-project-button {
+  background: #f9b1a2;
+  text-decoration: none;
+  border: 2px solid #f9b1a2;
+  border-radius: 30px;
+  padding: 9px 22px;
+  color: #23201f;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 80px;
+  cursor: pointer;
+}
+
+.add-project-button:hover {
+  border: 2px solid #23201f;
+}
+
+.viewall {
+  font-size: 14px;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.project-title-left {
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
 }

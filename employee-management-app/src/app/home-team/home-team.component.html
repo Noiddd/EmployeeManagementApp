@@ -7,8 +7,23 @@
     <title>Home Team Section</title>
   </head>
   <body>
-    <div *ngFor="let employee of employees">
-      <div>{{ employee.firstName }}</div>
+    <div class="team-title">
+      <div class="team-title-left">Team member</div>
+
+      <div class="team-title-right">
+        <div class="add-team-button-container">
+          <button class="add-team-button">Add team member</button>
+        </div>
+        <div class="viewall">View all</div>
+      </div>
+    </div>
+
+    <div class="membercard-list">
+      <app-membercard
+        class="membercard"
+        *ngFor="let employee of employees"
+        [employee]="employee"
+      ></app-membercard>
     </div>
   </body>
 </html>
