@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
+    <title>Home Team Section</title>
   </head>
   <body>
-    <app-navbar></app-navbar>
-    <div class="main-container">
-      <div class="project-section"><app-home-project></app-home-project></div>
-      <div class="team-section"><app-home-team></app-home-team></div>
+    <div *ngFor="let employee of employees">
+      <div>{{ employee.firstName }}</div>
     </div>
   </body>
 </html>

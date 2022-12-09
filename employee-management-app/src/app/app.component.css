@@ -1,0 +1,16 @@
+.main-container {
+  position: fixed;
+  width: 100%;
+  top: 160px;
+  left: 115px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-section {
+  width: 50%;
+}
+
+.team-section {
+  width: 50%;
+}

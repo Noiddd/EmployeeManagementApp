@@ -1,0 +1,30 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
+
+@Component({
+  selector: 'app-home-team',
+  templateUrl: './home-team.component.html',
+  styleUrls: ['./home-team.component.css'],
+  providers: [EmployeeService],
+})
+export class HomeTeamComponent implements OnInit {
+  public employees: Employee[] = [];
+
+  constructor(private employeeService: EmployeeService) {}
+  ngOnInit(): void {
+    this.getEmployees();
+  }
+
+  public getEmployees(): void {
+    this.employeeService.getEmployees().subscribe(
+      (response: Employee[]) => {
+        this.employees = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+}

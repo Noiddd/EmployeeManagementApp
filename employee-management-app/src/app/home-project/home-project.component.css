@@ -1,0 +1,53 @@
+.date {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.search {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.search-bar {
+  border-radius: 50px;
+}
+
+.search-input {
+  height: 40px;
+  width: 500px;
+  border-radius: 20px;
+  border: none;
+  width: 900px;
+  padding: 10px;
+  padding-left: 40px;
+  font-size: 20px;
+}
+
+.searchButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 77px;
+  left: 880px;
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 50px;
+  margin-top: 50px;
+}
+
+.project-title-right {
+  display: flex;
+}
+
+.add-project-button-container {
+  padding-right: 20px;
+}
+
+.add-project-button {
+}
