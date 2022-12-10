@@ -1,5 +1,5 @@
 .main-container {
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 160px;
   left: 115px;
@@ -13,4 +13,5 @@
 
 .team-section {
   width: 50%;
+  max-width: 50%;
 }

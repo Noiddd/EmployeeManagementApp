@@ -1,10 +1,16 @@
 .team-title {
+  position: fixed;
+  top: 97px;
+  left: 750px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 15px;
-  padding-right: 250px;
-  margin-top: 168px;
+
+  padding-top: 200px;
+  width: 595px;
+  z-index: 500;
+  background-color: #e5e5e5;
 }
 
 .team-title-right {
@@ -47,10 +53,14 @@
 }
 
 .membercard-list {
+  position: absolute;
+  top: 200px;
+  right: 200px;
   display: flex;
   justify-content: space-between;
-  width: 720px;
+  width: 600px;
   flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
 .membercard {
