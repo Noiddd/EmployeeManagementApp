@@ -8,10 +8,25 @@
   </head>
   <body>
     <div class="projectcard-container">
+      <div class="projectcard-button">
+        <fa-icon [icon]="faPen" style="font-size: 15px" class="fapen"></fa-icon>
+        <fa-icon
+          [icon]="faXmark"
+          style="font-size: 20px"
+          class="faxmark"
+        ></fa-icon>
+      </div>
+
       <div class="project-name">{{ project.projectName }}</div>
-      <div class="project-deadline">{{ project.deadline }}</div>
-      <div class="projects-details">{{ project.projectDetails }}</div>
-      <div class="project-progress">{{ project.progress }}</div>
+      <div class="project-deadline">Deadline: {{ project.deadline }}</div>
+      <div class="project-details">{{ project.projectDetails }}</div>
+      <div class="project-progress">Progress: {{ project.progress }}%</div>
+      <div class="progressbar-container">
+        <div
+          class="progressbarvalue"
+          style="width: {{ project.progress }}%;"
+        ></div>
+      </div>
     </div>
   </body>
 </html>

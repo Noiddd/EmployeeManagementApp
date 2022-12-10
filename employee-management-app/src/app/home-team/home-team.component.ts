@@ -27,4 +27,8 @@ export class HomeTeamComponent implements OnInit {
       }
     );
   }
+
+  public onOpenModal(employee: Employee, mode: string): void {
+    const button = document
+  }
 }
