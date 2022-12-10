@@ -38,5 +38,13 @@
         <div class="viewall">View all</div>
       </div>
     </div>
+
+    <div class="projectcard-list">
+      <app-projectcard
+        class="projectcard"
+        *ngFor="let project of projects"
+        [project]="project"
+      ></app-projectcard>
+    </div>
   </body>
 </html>

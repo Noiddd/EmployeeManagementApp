@@ -54,13 +54,12 @@
 
 .membercard-list {
   position: absolute;
-  top: 200px;
+  top: 180px;
   right: 200px;
   display: flex;
   justify-content: space-between;
   width: 600px;
   flex-wrap: wrap;
-  overflow-x: hidden;
 }
 
 .membercard {

@@ -52,7 +52,7 @@
 .project-title {
   position: fixed;
   top: 300px;
-  left: 90px;
+  left: 87px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,4 +98,18 @@
   color: red;
   cursor: pointer;
   font-weight: bold;
+}
+
+.projectcard-list {
+  position: fixed;
+  top: 340px;
+  left: 87px;
+  display: flex;
+  justify-content: space-between;
+  width: 610px;
+  gap: 20px;
+}
+
+.projectcard {
+  flex: 0 0 50%;
 }
