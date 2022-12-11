@@ -11,6 +11,12 @@ import { MembercardComponent } from './membercard/membercard.component';
 import { ProjectcardComponent } from './projectcard/projectcard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmployeeAddComponent } from './modal/employee-add/employee-add.component';
+import { FormsModule } from '@angular/forms';
+import { ProjectAddComponent } from './modal/project-add/project-add.component';
+import { EmployeeUpdateComponent } from './modal/employee-update/employee-update.component';
+import { ProjectUpdateComponent } from './modal/project-update/project-update.component';
+import { EmployeeDeleteComponent } from './modal/employee-delete/employee-delete.component';
+import { ProjectDeleteComponent } from './modal/project-delete/project-delete.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +27,18 @@ import { EmployeeAddComponent } from './modal/employee-add/employee-add.componen
     MembercardComponent,
     ProjectcardComponent,
     EmployeeAddComponent,
+    ProjectAddComponent,
+    EmployeeUpdateComponent,
+    ProjectUpdateComponent,
+    EmployeeDeleteComponent,
+    ProjectDeleteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

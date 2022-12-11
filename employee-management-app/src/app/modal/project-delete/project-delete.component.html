@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Delete</title>
+  </head>
+  <body>
+    <div class="overlay" (click)="modalService.showProjectDelete = false"></div>
+
+    <div class="modal-conatiner">
+      <h2>Are you sure you want to delete the project?</h2>
+      <div class="x-icon">
+        <fa-icon
+          id="xicon"
+          [icon]="faXmark"
+          style="font-size: 20px"
+          class="faxmark"
+          (click)="modalService.showProjectDelete = false"
+        ></fa-icon>
+      </div>
+
+      <form name="registrationForm" id="form">
+        <button class="submit-btn" role="button" (click)="deleteEmployee()">
+          Delete
+        </button>
+      </form>
+    </div>
+  </body>
+  d
+</html>

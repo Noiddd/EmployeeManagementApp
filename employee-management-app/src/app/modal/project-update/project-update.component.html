@@ -4,41 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employee Add</title>
+    <title>Employee Update</title>
   </head>
   <body>
-    <div class="overlay" (click)="modalService.showEmployeeAdd = false"></div>
+    <div class="overlay" (click)="modalService.showProjectEdit = false"></div>
 
     <div class="modal-conatiner">
-      <h2>Add Team Member</h2>
+      <h2>Edit Project</h2>
       <div class="x-icon">
         <fa-icon
           id="xicon"
           [icon]="faXmark"
           style="font-size: 20px"
           class="faxmark"
-          (click)="modalService.showEmployeeAdd = false"
+          (click)="modalService.showProjectEdit = false"
         ></fa-icon>
       </div>
 
-      <form
-        name="registrationForm"
-        id="form"
-        #addForm="ngForm"
-        (ngSubmit)="onAddEmployee(addForm)"
-      >
+      <form name="registrationForm" id="form" #editForm="ngForm">
+        <div
+          ngModel="{{ modalService.editProject?.id }}"
+          type="hidden"
+          name="id"
+        ></div>
         <div class="input-control">
           <div id="firstName-error"></div>
           <div class="user-box">
             <input
               type="text"
-              ngModel
-              name="firstName"
+              ngModel="{{ modalService.editProject?.projectName }}"
+              name="projectName"
               required
               class="inputField firstNameField"
               id="firstNameId"
             />
-            <label class="label firstNameLabel">First Name</label>
+            <label class="label firstNameLabel">Project Name</label>
           </div>
         </div>
 
@@ -46,14 +46,14 @@
           <div id="lastName-error"></div>
           <div class="user-box">
             <input
-              ngModel
+              ngModel="{{ modalService.editProject?.projectDetails }}"
               type="text"
-              name="lastName"
+              name="projectDetails"
               required
               class="inputField lastNameField"
               id="lastNameId"
             />
-            <label class="label lastNameLabel">Last Name</label>
+            <label class="label lastNameLabel">Project Details</label>
           </div>
         </div>
 
@@ -61,14 +61,14 @@
           <div id="email-error"></div>
           <div class="user-box">
             <input
-              ngModel
+              ngModel="{{ modalService.editProject?.progress }}"
               type="text"
-              name="email"
+              name="progress"
               required
               class="inputField emailField"
               id="emailId"
             />
-            <label class="label emailLabel">Email</label>
+            <label class="label emailLabel">Progress</label>
           </div>
         </div>
 
@@ -76,29 +76,14 @@
           <div id="jobTitle-error"></div>
           <div class="user-box">
             <input
-              ngModel
+              ngModel="{{ modalService.editProject?.deadline }}"
               type="text"
-              name="jobTitle"
+              name="deadline"
               required
               class="inputField jobTitleField"
               id="jobTitleId"
             />
-            <label class="label jobTitleLabel">Job Title</label>
-          </div>
-        </div>
-
-        <div class="input-control">
-          <div id="salary-error"></div>
-          <div class="user-box">
-            <input
-              ngModel
-              type="text"
-              name="salary"
-              required
-              class="inputField salaryField"
-              id="salaryId"
-            />
-            <label class="label salaryLabel">Salary</label>
+            <label class="label jobTitleLabel">Deadline</label>
           </div>
         </div>
 
@@ -106,9 +91,9 @@
           class="submit-btn"
           role="button"
           type="submit"
-          [disabled]="addForm.invalid"
+          (click)="onUpdateProject(editForm.value)"
         >
-          Add
+          Edit
         </button>
       </form>
     </div>

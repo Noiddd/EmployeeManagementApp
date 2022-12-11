@@ -2,23 +2,23 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { Employee } from 'src/app/employee';
-import { EmployeeService } from 'src/app/service/employee.service';
+import { Project } from 'src/app/project';
 import { ModalService } from 'src/app/service/modal.service';
+import { ProjectService } from 'src/app/service/project.service';
 
 @Component({
-  selector: 'app-employee-add',
-  templateUrl: './employee-add.component.html',
-  styleUrls: ['./employee-add.component.css'],
+  selector: 'app-project-add',
+  templateUrl: './project-add.component.html',
+  styleUrls: ['./project-add.component.css'],
 })
-export class EmployeeAddComponent {
-  public onAddEmployee(addForm: NgForm): void {
+export class ProjectAddComponent {
+  public onAddProject(addForm: NgForm): void {
     document.getElementById('xicon')?.click();
 
-    this.employeeService.addEmployee(addForm.value).subscribe(
-      (response: Employee) => {
+    this.projectService.addProject(addForm.value).subscribe(
+      (response: Project) => {
         console.log(response);
-        this.employeeService.getEmployees();
+        this.projectService.getProjects();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -28,7 +28,7 @@ export class EmployeeAddComponent {
 
   constructor(
     public modalService: ModalService,
-    private employeeService: EmployeeService
+    private projectService: ProjectService
   ) {}
 
   faXmark = faXmark;

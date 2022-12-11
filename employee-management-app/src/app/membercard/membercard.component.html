@@ -9,11 +9,17 @@
   <body>
     <div class="membercard-container">
       <div class="membercard-button">
-        <fa-icon [icon]="faPen" style="font-size: 15px" class="fapen"></fa-icon>
+        <fa-icon
+          [icon]="faPen"
+          style="font-size: 15px"
+          class="fapen"
+          (click)="editEmployeeModal()"
+        ></fa-icon>
         <fa-icon
           [icon]="faXmark"
           style="font-size: 20px"
           class="faxmark"
+          (click)="deleteEmployeeModal()"
         ></fa-icon>
       </div>
 

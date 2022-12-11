@@ -8,7 +8,6 @@ import { ModalService } from '../service/modal.service';
   selector: 'app-home-team',
   templateUrl: './home-team.component.html',
   styleUrls: ['./home-team.component.css'],
-  providers: [EmployeeService],
 })
 export class HomeTeamComponent implements OnInit {
   public employees: Employee[] = [];

@@ -7,17 +7,17 @@
     <title>Employee Add</title>
   </head>
   <body>
-    <div class="overlay" (click)="modalService.showEmployeeAdd = false"></div>
+    <div class="overlay" (click)="modalService.showProjectAdd = false"></div>
 
     <div class="modal-conatiner">
-      <h2>Add Team Member</h2>
+      <h2>Add Project</h2>
       <div class="x-icon">
         <fa-icon
           id="xicon"
           [icon]="faXmark"
           style="font-size: 20px"
           class="faxmark"
-          (click)="modalService.showEmployeeAdd = false"
+          (click)="modalService.showProjectAdd = false"
         ></fa-icon>
       </div>
 
@@ -25,7 +25,7 @@
         name="registrationForm"
         id="form"
         #addForm="ngForm"
-        (ngSubmit)="onAddEmployee(addForm)"
+        (ngSubmit)="onAddProject(addForm)"
       >
         <div class="input-control">
           <div id="firstName-error"></div>
@@ -33,12 +33,12 @@
             <input
               type="text"
               ngModel
-              name="firstName"
+              name="projectName"
               required
               class="inputField firstNameField"
               id="firstNameId"
             />
-            <label class="label firstNameLabel">First Name</label>
+            <label class="label firstNameLabel">Project Name</label>
           </div>
         </div>
 
@@ -48,12 +48,12 @@
             <input
               ngModel
               type="text"
-              name="lastName"
+              name="projectDetails"
               required
               class="inputField lastNameField"
               id="lastNameId"
             />
-            <label class="label lastNameLabel">Last Name</label>
+            <label class="label lastNameLabel">Project Details</label>
           </div>
         </div>
 
@@ -63,12 +63,12 @@
             <input
               ngModel
               type="text"
-              name="email"
+              name="progress"
               required
               class="inputField emailField"
               id="emailId"
             />
-            <label class="label emailLabel">Email</label>
+            <label class="label emailLabel">Progress</label>
           </div>
         </div>
 
@@ -78,27 +78,12 @@
             <input
               ngModel
               type="text"
-              name="jobTitle"
+              name="deadline"
               required
               class="inputField jobTitleField"
               id="jobTitleId"
             />
-            <label class="label jobTitleLabel">Job Title</label>
-          </div>
-        </div>
-
-        <div class="input-control">
-          <div id="salary-error"></div>
-          <div class="user-box">
-            <input
-              ngModel
-              type="text"
-              name="salary"
-              required
-              class="inputField salaryField"
-              id="salaryId"
-            />
-            <label class="label salaryLabel">Salary</label>
+            <label class="label jobTitleLabel">Deadline</label>
           </div>
         </div>
 

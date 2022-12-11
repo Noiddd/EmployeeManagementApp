@@ -1,22 +1,26 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Employee } from 'src/app/employee';
 import { EmployeeService } from 'src/app/service/employee.service';
 import { ModalService } from 'src/app/service/modal.service';
 
 @Component({
-  selector: 'app-employee-add',
-  templateUrl: './employee-add.component.html',
-  styleUrls: ['./employee-add.component.css'],
+  selector: 'app-employee-delete',
+  templateUrl: './employee-delete.component.html',
+  styleUrls: ['./employee-delete.component.css'],
 })
-export class EmployeeAddComponent {
-  public onAddEmployee(addForm: NgForm): void {
+export class EmployeeDeleteComponent {
+  constructor(
+    public modalService: ModalService,
+    private employeeService: EmployeeService
+  ) {}
+
+  public onDeleteEmployee(employeeId: number): void {
     document.getElementById('xicon')?.click();
 
-    this.employeeService.addEmployee(addForm.value).subscribe(
-      (response: Employee) => {
+    this.employeeService.deleteEmployee(employeeId).subscribe(
+      (response: void) => {
         console.log(response);
         this.employeeService.getEmployees();
       },
@@ -26,10 +30,8 @@ export class EmployeeAddComponent {
     );
   }
 
-  constructor(
-    public modalService: ModalService,
-    private employeeService: EmployeeService
-  ) {}
-
+  public deleteEmployee() {
+    this.onDeleteEmployee(this.modalService.deleteEmployee?.id!);
+  }
   faXmark = faXmark;
 }

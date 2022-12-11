@@ -8,6 +8,19 @@
   </head>
   <body>
     <app-employee-add *ngIf="modalService.showEmployeeAdd"></app-employee-add>
+    <app-employee-update
+      *ngIf="modalService.showEmployeeEdit"
+    ></app-employee-update>
+    <app-employee-delete
+      *ngIf="modalService.showEmployeeDelete"
+    ></app-employee-delete>
+    <app-project-add *ngIf="modalService.showProjectAdd"></app-project-add>
+    <app-project-update
+      *ngIf="modalService.showProjectEdit"
+    ></app-project-update>
+    <app-project-delete
+      *ngIf="modalService.showProjectDelete"
+    ></app-project-delete>
     <app-navbar></app-navbar>
     <div class="main-container">
       <div class="project-section"><app-home-project></app-home-project></div>

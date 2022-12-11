@@ -4,35 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employee Add</title>
+    <title>Employee Update</title>
   </head>
   <body>
-    <div class="overlay" (click)="modalService.showEmployeeAdd = false"></div>
+    <div class="overlay" (click)="modalService.showEmployeeEdit = false"></div>
 
     <div class="modal-conatiner">
-      <h2>Add Team Member</h2>
+      <h2>Edit {{ modalService.editEmployee?.firstName }}</h2>
       <div class="x-icon">
         <fa-icon
           id="xicon"
           [icon]="faXmark"
           style="font-size: 20px"
           class="faxmark"
-          (click)="modalService.showEmployeeAdd = false"
+          (click)="modalService.showEmployeeEdit = false"
         ></fa-icon>
       </div>
 
-      <form
-        name="registrationForm"
-        id="form"
-        #addForm="ngForm"
-        (ngSubmit)="onAddEmployee(addForm)"
-      >
+      <form name="registrationForm" id="form" #editForm="ngForm">
+        <div
+          ngModel="{{ modalService.editEmployee?.id }}"
+          type="hidden"
+          name="id"
+        ></div>
+
         <div class="input-control">
           <div id="firstName-error"></div>
           <div class="user-box">
             <input
+              ngModel="{{ modalService.editEmployee?.firstName }}"
               type="text"
-              ngModel
               name="firstName"
               required
               class="inputField firstNameField"
@@ -46,7 +47,7 @@
           <div id="lastName-error"></div>
           <div class="user-box">
             <input
-              ngModel
+              ngModel="{{ modalService.editEmployee?.lastName }}"
               type="text"
               name="lastName"
               required
@@ -61,7 +62,7 @@
           <div id="email-error"></div>
           <div class="user-box">
             <input
-              ngModel
+              ngModel="{{ modalService.editEmployee?.email }}"
               type="text"
               name="email"
               required
@@ -76,7 +77,7 @@
           <div id="jobTitle-error"></div>
           <div class="user-box">
             <input
-              ngModel
+              ngModel="{{ modalService.editEmployee?.jobTitle }}"
               type="text"
               name="jobTitle"
               required
@@ -91,7 +92,7 @@
           <div id="salary-error"></div>
           <div class="user-box">
             <input
-              ngModel
+              ngModel="{{ modalService.editEmployee?.salary }}"
               type="text"
               name="salary"
               required
@@ -106,9 +107,9 @@
           class="submit-btn"
           role="button"
           type="submit"
-          [disabled]="addForm.invalid"
+          (click)="onUpdateEmployee(editForm.value)"
         >
-          Add
+          Edit
         </button>
       </form>
     </div>

@@ -2,13 +2,13 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Project } from '../project';
+import { ModalService } from '../service/modal.service';
 import { ProjectService } from '../service/project.service';
 
 @Component({
   selector: 'app-home-project',
   templateUrl: './home-project.component.html',
   styleUrls: ['./home-project.component.css'],
-  providers: [ProjectService],
 })
 export class HomeProjectComponent implements OnInit {
   public months: String[] = [
@@ -33,7 +33,10 @@ export class HomeProjectComponent implements OnInit {
 
   public projects: Project[] = [];
 
-  constructor(private projectService: ProjectService) {}
+  constructor(
+    private projectService: ProjectService,
+    public modalService: ModalService
+  ) {}
 
   ngOnInit(): void {
     this.getProjects();

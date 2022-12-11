@@ -1,21 +1,28 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Employee } from 'src/app/employee';
 import { EmployeeService } from 'src/app/service/employee.service';
 import { ModalService } from 'src/app/service/modal.service';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-employee-add',
-  templateUrl: './employee-add.component.html',
-  styleUrls: ['./employee-add.component.css'],
+  selector: 'app-employee-update',
+  templateUrl: './employee-update.component.html',
+  styleUrls: ['./employee-update.component.css'],
 })
-export class EmployeeAddComponent {
-  public onAddEmployee(addForm: NgForm): void {
+export class EmployeeUpdateComponent {
+  constructor(
+    public modalService: ModalService,
+    private employeeService: EmployeeService
+  ) {}
+
+  public onUpdateEmployee(employee: Employee): void {
     document.getElementById('xicon')?.click();
 
-    this.employeeService.addEmployee(addForm.value).subscribe(
+    // passing employee data into edit employee
+    this.modalService.editEmployee = employee;
+
+    this.employeeService.updateEmployee(employee).subscribe(
       (response: Employee) => {
         console.log(response);
         this.employeeService.getEmployees();
@@ -25,11 +32,5 @@ export class EmployeeAddComponent {
       }
     );
   }
-
-  constructor(
-    public modalService: ModalService,
-    private employeeService: EmployeeService
-  ) {}
-
   faXmark = faXmark;
 }

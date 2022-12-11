@@ -33,7 +33,12 @@
 
       <div class="project-title-right">
         <div class="add-project-button-container">
-          <button class="add-project-button">Add project</button>
+          <button
+            class="add-project-button"
+            (click)="modalService.showProjectAdd = true"
+          >
+            Add project
+          </button>
         </div>
         <div class="viewall">View all</div>
       </div>
