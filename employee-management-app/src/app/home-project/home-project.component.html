@@ -17,13 +17,20 @@
 
     <div class="search">
       <button type="submit" class="searchButton">
-        <fa-icon [icon]="faMagnifyingGlass" style="font-size: 20px"></fa-icon>
+        <fa-icon
+          [icon]="faMagnifyingGlass"
+          style="font-size: 20px"
+          (click)="searchProjects(key.value)"
+        ></fa-icon>
       </button>
       <div class="search-bar">
         <input
           class="search-input"
           type="text"
           placeholder="Search for project.."
+          #key="ngModel"
+          ngModel
+          (ngModelChange)="searchProjects(key.value)"
         />
       </div>
     </div>

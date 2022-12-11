@@ -34,7 +34,7 @@
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: #fda16e;
+  background: #f8d289;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
@@ -117,15 +117,15 @@
 }
 
 .submit-btn:hover {
-  border-color: #fda16e;
-  color: #fda16e;
-  fill: #fda16e;
+  border-color: #f8d289;
+  color: #f8d289;
+  fill: #f8d289;
 }
 
 .submit-btn:active {
-  border-color: #fda16e;
-  color: #fda16e;
-  fill: #fda16e;
+  border-color: #f8d289;
+  color: #f8d289;
+  fill: #f8d289;
 }
 
 @media (min-width: 768px) {

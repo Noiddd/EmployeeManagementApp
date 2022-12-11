@@ -32,6 +32,7 @@ export class HomeProjectComponent implements OnInit {
   faMagnifyingGlass = faMagnifyingGlass;
 
   public projects: Project[] = [];
+  public allProjects: Project[] = [];
 
   constructor(
     private projectService: ProjectService,
@@ -46,10 +47,31 @@ export class HomeProjectComponent implements OnInit {
     this.projectService.getProjects().subscribe(
       (response: Project[]) => {
         this.projects = response.slice(-2);
+        this.allProjects = response;
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
     );
+  }
+
+  public searchProjects(key: string): void {
+    const results: Project[] = [];
+    for (const project of this.allProjects) {
+      if (
+        project.projectName.toLowerCase().indexOf(key.toLowerCase()) !== -1 ||
+        project.projectDetails.toLowerCase().indexOf(key.toLowerCase()) !==
+          -1 ||
+        project.deadline.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      ) {
+        results.push(project);
+      }
+    }
+
+    this.projects = results.slice(-2);
+
+    if (results.length === 0 || !key) {
+      this.getProjects();
+    }
   }
 }
