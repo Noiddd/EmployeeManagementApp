@@ -1,7 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../service/employee.service';
+import { ModalService } from '../service/modal.service';
 
 @Component({
   selector: 'app-home-team',
@@ -12,7 +13,10 @@ import { EmployeeService } from '../employee.service';
 export class HomeTeamComponent implements OnInit {
   public employees: Employee[] = [];
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(
+    private employeeService: EmployeeService,
+    public modalService: ModalService
+  ) {}
   ngOnInit(): void {
     this.getEmployees();
   }
@@ -29,6 +33,6 @@ export class HomeTeamComponent implements OnInit {
   }
 
   public onOpenModal(employee: Employee, mode: string): void {
-    const button = document
+    const button = document;
   }
 }

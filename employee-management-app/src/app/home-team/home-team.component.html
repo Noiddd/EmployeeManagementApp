@@ -12,7 +12,12 @@
 
       <div class="team-title-right">
         <div class="add-team-button-container">
-          <button class="add-team-button">Add team member</button>
+          <button
+            class="add-team-button"
+            (click)="modalService.showEmployeeAdd = true"
+          >
+            Add team member
+          </button>
         </div>
         <div class="viewall">View all</div>
       </div>

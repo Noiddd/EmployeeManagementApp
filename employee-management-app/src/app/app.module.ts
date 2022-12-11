@@ -10,10 +10,24 @@ import { HomeProjectComponent } from './home-project/home-project.component';
 import { MembercardComponent } from './membercard/membercard.component';
 import { ProjectcardComponent } from './projectcard/projectcard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EmployeeAddComponent } from './modal/employee-add/employee-add.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeTeamComponent, HomeProjectComponent, MembercardComponent, ProjectcardComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeTeamComponent,
+    HomeProjectComponent,
+    MembercardComponent,
+    ProjectcardComponent,
+    EmployeeAddComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

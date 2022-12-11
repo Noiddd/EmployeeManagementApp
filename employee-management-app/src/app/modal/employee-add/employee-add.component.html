@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Add</title>
+  </head>
+  <body>
+    <div class="overlay" (click)="modalService.showEmployeeAdd = false"></div>
+
+    <div class="modal-conatiner">
+      <h2>Add Team Member</h2>
+      <div class="x-icon">
+        <fa-icon
+          [icon]="faXmark"
+          style="font-size: 20px"
+          class="faxmark"
+          (click)="modalService.showEmployeeAdd = false"
+        ></fa-icon>
+      </div>
+
+      <form name="registrationForm" id="form">
+        <div class="input-control">
+          <div id="name-error"></div>
+          <div class="user-box">
+            <input
+              type="text"
+              name="name"
+              required
+              class="inputField nameField"
+              id="nameId"
+            />
+            <label class="label nameLabel">Name</label>
+          </div>
+        </div>
+
+        <div class="input-control">
+          <div class="user-box">
+            <input
+              type="text"
+              name="userName"
+              required
+              class="inputField userNameField"
+              id="uNameId"
+            />
+            <label class="label userNameLabel">User Name</label>
+          </div>
+        </div>
+
+        <div class="input-control">
+          <div id="password-error"></div>
+          <div class="user-box">
+            <input
+              type="text"
+              name="password"
+              required
+              class="inputField passwordField"
+              id="passwordId"
+              onchange="validatePassword()"
+            />
+            <label class="label passwordLabel">Password</label>
+          </div>
+        </div>
+
+        <button class="submit-btn" role="button" type="submit">Add</button>
+      </form>
+    </div>
+  </body>
+</html>
