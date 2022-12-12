@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { faPen, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faXmark, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { Project } from '../project';
+import { EmployeeService } from '../service/employee.service';
 import { ModalService } from '../service/modal.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { ModalService } from '../service/modal.service';
   styleUrls: ['./projectcard.component.css'],
 })
 export class ProjectcardComponent {
-  constructor(public modalService: ModalService) {}
+  constructor(
+    public modalService: ModalService,
+    public employeeService: EmployeeService
+  ) {}
 
   public editProjectModal() {
     this.modalService.showProjectEdit = true;
@@ -20,8 +24,14 @@ export class ProjectcardComponent {
     this.modalService.deleteProject = this.project;
   }
 
+  public addEmployeeProjectModal() {
+    this.modalService.showProjectAddEmployee = true;
+    this.modalService.addEmployeeProject = this.project;
+  }
+
   @Input() project!: Project;
 
   faXmark = faXmark;
   faPen = faPen;
+  faUserPlus = faUserPlus;
 }

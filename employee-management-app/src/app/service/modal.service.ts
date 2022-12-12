@@ -17,10 +17,12 @@ export class ModalService {
   showProjectAdd: boolean = false;
   showProjectEdit: boolean = false;
   showProjectDelete: boolean = false;
+  showProjectAddEmployee: boolean = false;
   showProject: boolean = false;
 
   public editProject?: Project;
   public deleteProject?: Project;
+  public addEmployeeProject?: Project;
 
   constructor() {}
 }

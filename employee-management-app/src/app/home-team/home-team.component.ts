@@ -16,6 +16,7 @@ export class HomeTeamComponent implements OnInit {
     private employeeService: EmployeeService,
     public modalService: ModalService
   ) {}
+
   ngOnInit(): void {
     this.getEmployees();
   }
@@ -29,9 +30,5 @@ export class HomeTeamComponent implements OnInit {
         alert(error.message);
       }
     );
-  }
-
-  public onOpenModal(employee: Employee, mode: string): void {
-    const button = document;
   }
 }

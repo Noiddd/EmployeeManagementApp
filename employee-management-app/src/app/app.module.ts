@@ -17,6 +17,7 @@ import { EmployeeUpdateComponent } from './modal/employee-update/employee-update
 import { ProjectUpdateComponent } from './modal/project-update/project-update.component';
 import { EmployeeDeleteComponent } from './modal/employee-delete/employee-delete.component';
 import { ProjectDeleteComponent } from './modal/project-delete/project-delete.component';
+import { ProjectAddemployeeComponent } from './modal/project-addemployee/project-addemployee.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ProjectDeleteComponent } from './modal/project-delete/project-delete.co
     ProjectUpdateComponent,
     EmployeeDeleteComponent,
     ProjectDeleteComponent,
+    ProjectAddemployeeComponent,
   ],
   imports: [
     BrowserModule,

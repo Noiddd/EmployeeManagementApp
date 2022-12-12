@@ -10,6 +10,13 @@
     <div class="projectcard-container">
       <div class="projectcard-button">
         <fa-icon
+          [icon]="faUserPlus"
+          style="font-size: 15px"
+          class="faadd"
+          (click)="addEmployeeProjectModal()"
+        ></fa-icon>
+
+        <fa-icon
           [icon]="faPen"
           style="font-size: 15px"
           class="fapen"

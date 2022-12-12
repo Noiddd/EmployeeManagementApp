@@ -87,6 +87,41 @@
           </div>
         </div>
 
+        <!-- <div class="input-control">
+          <div id="jobTitle-error"></div>
+          <div class="user-box">
+            <select class="selectField" name="employee" multiple>
+              <option value="" disabled selected hidden>
+                Add team members
+              </option>
+              <option *ngFor="let employee of employeesAvailable">
+                {{ employee.firstName }}
+              </option>
+            </select>
+          </div>
+        </div> -->
+
+        <div class="input-control">
+          <div id="jobTitle-error"></div>
+          <div class="user-box">
+            <label class="label jobTitleLabel">Add Team Members</label>
+          </div>
+        </div>
+        <div class="checkbox-list">
+          <div *ngFor="let employee of employeesAvailable">
+            <input
+              ngModel
+              type="checkbox"
+              id="employee"
+              name="employee"
+              value="{{ employee }}"
+            />
+            <label for="{{ employee.firstName }}">
+              {{ employee.firstName }}</label
+            ><br />
+          </div>
+        </div>
+
         <button
           class="submit-btn"
           role="button"
