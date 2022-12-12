@@ -77,6 +77,13 @@
         </div>
 
         <div class="input-control">
+          <div
+            id="email-error"
+            class="error"
+            *ngIf="email.touched && emailError"
+          >
+            <small>Please enter a valid email</small>
+          </div>
           <div id="email-error"></div>
           <div class="user-box">
             <input
@@ -86,6 +93,9 @@
               required
               class="inputField emailField"
               id="emailId"
+              #email="ngModel"
+              [(ngModel)]="email"
+              (keyup)="validateEmail()"
             />
             <label class="label emailLabel">Email</label>
           </div>
