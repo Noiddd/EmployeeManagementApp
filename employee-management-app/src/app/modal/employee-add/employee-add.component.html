@@ -28,21 +28,37 @@
         (ngSubmit)="onAddEmployee(addForm)"
       >
         <div class="input-control">
-          <div id="firstName-error"></div>
+          <div
+            id="firstName-error"
+            class="error"
+            *ngIf="fname.touched && firstNameError"
+          >
+            <small>Please enter a valid first name</small>
+          </div>
           <div class="user-box">
             <input
               type="text"
               ngModel
+              #fname="ngModel"
               name="firstName"
               required
               class="inputField firstNameField"
               id="firstNameId"
+              [(ngModel)]="firstName"
+              (keyup)="validateFirstName()"
             />
             <label class="label firstNameLabel">First Name</label>
           </div>
         </div>
 
         <div class="input-control">
+          <div
+            id="lastName-error"
+            class="error"
+            *ngIf="lname.touched && lastNameError"
+          >
+            <small>Please enter a valid last name</small>
+          </div>
           <div id="lastName-error"></div>
           <div class="user-box">
             <input
@@ -52,12 +68,22 @@
               required
               class="inputField lastNameField"
               id="lastNameId"
+              #lname="ngModel"
+              [(ngModel)]="lastName"
+              (keyup)="validateLastName()"
             />
             <label class="label lastNameLabel">Last Name</label>
           </div>
         </div>
 
         <div class="input-control">
+          <div
+            id="email-error"
+            class="error"
+            *ngIf="email.touched && emailError"
+          >
+            <small>Please enter a valid email</small>
+          </div>
           <div id="email-error"></div>
           <div class="user-box">
             <input
@@ -67,7 +93,9 @@
               required
               class="inputField emailField"
               id="emailId"
-              email
+              #email="ngModel"
+              [(ngModel)]="email"
+              (keyup)="validateEmail()"
             />
             <label class="label emailLabel">Email</label>
           </div>

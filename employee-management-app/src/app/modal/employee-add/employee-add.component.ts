@@ -32,4 +32,56 @@ export class EmployeeAddComponent {
   ) {}
 
   faXmark = faXmark;
+
+  //validation
+  public firstName: string = '';
+  public firstNameError: boolean = false;
+
+  public lastName: string = '';
+  public lastNameError: boolean = false;
+
+  public email: string = '';
+  public emailError: boolean = false;
+
+  public jobTitle: string = '';
+  public jobTitleError: boolean = false;
+
+  public salary: string = '';
+  public salaryError: boolean = false;
+
+  validateFirstName() {
+    if (/\d/.test(this.firstName)) {
+      this.firstNameError = true;
+    } else {
+      this.firstNameError = false;
+    }
+  }
+
+  validateLastName() {
+    if (/\d/.test(this.lastName)) {
+      this.lastNameError = true;
+    } else {
+      this.lastNameError = false;
+    }
+  }
+
+  validateEmail() {
+    if (
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        this.email.toLowerCase()
+      )
+    ) {
+      this.emailError = false;
+    } else {
+      this.emailError = true;
+    }
+  }
+
+  validateSalary() {
+    if (/^[0-9]+$/.test(this.salary)) {
+      this.salaryError = false;
+    } else {
+      this.salaryError = true;
+    }
+  }
 }
