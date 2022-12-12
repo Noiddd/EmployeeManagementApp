@@ -80,7 +80,7 @@
           <div
             id="email-error"
             class="error"
-            *ngIf="email.touched && emailError"
+            *ngIf="emailInput.touched && emailError"
           >
             <small>Please enter a valid email</small>
           </div>
@@ -93,7 +93,7 @@
               required
               class="inputField emailField"
               id="emailId"
-              #email="ngModel"
+              #emailInput="ngModel"
               [(ngModel)]="email"
               (keyup)="validateEmail()"
             />
@@ -117,6 +117,13 @@
         </div>
 
         <div class="input-control">
+          <div
+            id="salary-error"
+            class="error"
+            *ngIf="salaryInput.touched && salaryError"
+          >
+            <small>Please enter a valid salary</small>
+          </div>
           <div id="salary-error"></div>
           <div class="user-box">
             <input
@@ -126,6 +133,9 @@
               required
               class="inputField salaryField"
               id="salaryId"
+              #salaryInput="ngModel"
+              [(ngModel)]="salary"
+              (keyup)="validateSalary()"
             />
             <label class="label salaryLabel">Salary</label>
           </div>

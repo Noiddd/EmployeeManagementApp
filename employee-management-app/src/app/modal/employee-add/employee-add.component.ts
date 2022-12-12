@@ -13,17 +13,24 @@ import { ModalService } from 'src/app/service/modal.service';
 })
 export class EmployeeAddComponent {
   public onAddEmployee(addForm: NgForm): void {
-    document.getElementById('xicon')?.click();
+    if (
+      this.validateFirstName() &&
+      this.validateLastName() &&
+      this.validateEmail() &&
+      this.validateSalary()
+    ) {
+      document.getElementById('xicon')?.click();
 
-    this.employeeService.addEmployee(addForm.value).subscribe(
-      (response: Employee) => {
-        console.log(response);
-        this.employeeService.getEmployees();
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
+      this.employeeService.addEmployee(addForm.value).subscribe(
+        (response: Employee) => {
+          console.log(response);
+          this.employeeService.getEmployees();
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+      );
+    }
   }
 
   constructor(
@@ -49,39 +56,53 @@ export class EmployeeAddComponent {
   public salary: string = '';
   public salaryError: boolean = false;
 
-  validateFirstName() {
+  public formValid: boolean = false;
+
+  validateFirstName(): boolean {
     if (/\d/.test(this.firstName)) {
       this.firstNameError = true;
+      return false;
     } else {
       this.firstNameError = false;
+      return true;
     }
   }
 
-  validateLastName() {
+  validateLastName(): boolean {
     if (/\d/.test(this.lastName)) {
       this.lastNameError = true;
+      return false;
     } else {
       this.lastNameError = false;
+      return true;
     }
   }
 
-  validateEmail() {
-    if (
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+  validateEmail(): any {
+    if (this.email == '') {
+      this.emailError = false;
+    } else if (
+      !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         this.email.toLowerCase()
       )
     ) {
-      this.emailError = false;
-    } else {
       this.emailError = true;
+      return false;
+    } else {
+      this.emailError = false;
+      return true;
     }
   }
 
-  validateSalary() {
-    if (/^[0-9]+$/.test(this.salary)) {
+  validateSalary(): any {
+    if (this.salary == '') {
       this.salaryError = false;
+    } else if (/^[0-9]+$/.test(this.salary)) {
+      this.salaryError = false;
+      return true;
     } else {
       this.salaryError = true;
+      return false;
     }
   }
 }
