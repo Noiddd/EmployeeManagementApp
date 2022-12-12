@@ -1,3 +1,5 @@
+import { Project } from './project';
+
 export interface Employee {
   id: number;
   firstName: string;
@@ -5,4 +7,5 @@ export interface Employee {
   email: string;
   jobTitle: string;
   salary: number;
+  projects: Project[];
 }
