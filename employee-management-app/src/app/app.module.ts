@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeTeamComponent } from './home-team/home-team.component';
-import { HomeProjectComponent } from './home-project/home-project.component';
 import { MembercardComponent } from './membercard/membercard.component';
 import { ProjectcardComponent } from './projectcard/projectcard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -18,6 +17,17 @@ import { ProjectUpdateComponent } from './modal/project-update/project-update.co
 import { EmployeeDeleteComponent } from './modal/employee-delete/employee-delete.component';
 import { ProjectDeleteComponent } from './modal/project-delete/project-delete.component';
 import { ProjectAddemployeeComponent } from './modal/project-addemployee/project-addemployee.component';
+import { AllEmployeesComponent } from './all-employees/all-employees.component';
+import { AllProjectsComponent } from './all-projects/all-projects.component';
+import { HomeComponent } from './home/home.component';
+import { HomeProjectComponent } from './home-project/home-project.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'employees', component: AllEmployeesComponent },
+  { path: 'projects', component: AllProjectsComponent },
+];
 
 @NgModule({
   declarations: [
@@ -34,6 +44,9 @@ import { ProjectAddemployeeComponent } from './modal/project-addemployee/project
     EmployeeDeleteComponent,
     ProjectDeleteComponent,
     ProjectAddemployeeComponent,
+    AllEmployeesComponent,
+    AllProjectsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +54,7 @@ import { ProjectAddemployeeComponent } from './modal/project-addemployee/project
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent],

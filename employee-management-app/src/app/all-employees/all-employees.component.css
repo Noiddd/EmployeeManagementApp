@@ -1,0 +1,101 @@
+.main-container {
+  position: absolute;
+  width: 100%;
+  top: 160px;
+  left: 115px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.date-container {
+  position: fixed;
+  left: 85px;
+}
+
+.search {
+  position: fixed;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  top: 220px;
+  left: 80px;
+}
+
+.search-bar {
+  border-radius: 50px;
+}
+
+.search-bar:focus {
+  border: #23201f;
+}
+
+.search-input {
+  height: 40px;
+  width: 600px;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.search-input:focus {
+  outline-color: black;
+}
+
+.searchButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 238px;
+  left: 650px;
+  z-index: 200;
+}
+
+.membercard-list {
+  position: absolute;
+  top: 120px;
+  display: flex;
+  right: 200px;
+  justify-content: space-between;
+  width: 1270px;
+  flex-wrap: wrap;
+  gap: -100px;
+}
+
+.membercard {
+  width: 200px;
+}
+
+.add-team-button-container {
+  padding-right: 20px;
+  position: fixed;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  top: 220px;
+  left: 630px;
+}
+
+.add-team-button {
+  background: #f9b1a2;
+  text-decoration: none;
+  border: 2px solid #f9b1a2;
+  border-radius: 30px;
+  padding: 9px 22px;
+  color: #23201f;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 80px;
+  cursor: pointer;
+}
+
+.add-team-button:hover {
+  border: 2px solid #23201f;
+}

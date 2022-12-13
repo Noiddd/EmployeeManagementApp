@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Employees</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="date-container">
+        <p class="date">Today, {{ todayDate }} {{ todayMonth }}</p>
+      </div>
+      <div class="search">
+        <button type="submit" class="searchButton">
+          <fa-icon [icon]="faMagnifyingGlass" style="font-size: 20px"></fa-icon>
+        </button>
+        <div class="search-bar">
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Search for team members.."
+            #key="ngModel"
+            ngModel
+            (ngModelChange)="searchEmployees(key.value)"
+          />
+        </div>
+      </div>
+      <div class="add-team-button-container">
+        <button
+          class="add-team-button"
+          (click)="modalService.showEmployeeAdd = true"
+        >
+          Add team member
+        </button>
+      </div>
+
+      <div class="membercard-list">
+        <app-membercard
+          class="membercard"
+          *ngFor="let employee of employees"
+          [employee]="employee"
+        ></app-membercard>
+      </div>
+    </div>
+  </body>
+</html>
