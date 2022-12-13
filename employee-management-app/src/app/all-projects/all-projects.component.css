@@ -14,7 +14,8 @@
 
 .date-container {
   position: fixed;
-  left: 85px;
+  left: 90px;
+  z-index: 2;
 }
 
 .search {
@@ -22,8 +23,12 @@
   margin-top: 10px;
   margin-left: 10px;
   display: flex;
-  top: 220px;
+  top: -80px;
   left: 80px;
+  z-index: 1;
+  padding-right: 800px;
+  padding-top: 300px;
+  background-color: #e5e5e5;
 }
 
 .search-bar {
@@ -64,8 +69,9 @@
   margin-top: 10px;
   margin-left: 10px;
   display: flex;
-  top: 220px;
+  top: 222px;
   left: 630px;
+  z-index: 1;
 }
 
 .add-team-button {
@@ -94,6 +100,7 @@
   width: 1270px;
   flex-wrap: wrap;
   gap: -100px;
+  z-index: -10;
 }
 
 .projectcard {
