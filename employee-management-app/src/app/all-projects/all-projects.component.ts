@@ -72,4 +72,6 @@ export class AllProjectsComponent {
       this.getProjects();
     }
   }
+
+  public addEmployeeToProject(): void {}
 }
