@@ -6,5 +6,5 @@ export interface Project {
   projectDetails: string;
   progress: number;
   deadline: string;
-  employee: Employee[];
+  employee: number[];
 }

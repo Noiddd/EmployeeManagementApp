@@ -21,7 +21,9 @@
     <app-project-delete
       *ngIf="modalService.showProjectDelete"
     ></app-project-delete>
-    <!-- <app-project-addemployee></app-project-addemployee> -->
+    <app-project-addemployee
+      *ngIf="modalService.showProjectAddEmployee"
+    ></app-project-addemployee>
     <app-navbar></app-navbar>
 
     <router-outlet></router-outlet>

@@ -1,1 +1,94 @@
-<p>project-addemployee works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Add Employee</title>
+  </head>
+  <body>
+    <div
+      class="overlay"
+      (click)="modalService.showProjectAddEmployee = false"
+    ></div>
+
+    <div class="modal-conatiner">
+      <h2>Add Employee To Project</h2>
+      <div class="x-icon">
+        <fa-icon
+          id="xicon"
+          [icon]="faXmark"
+          style="font-size: 20px"
+          class="faxmark"
+          (click)="modalService.showProjectAddEmployee = false"
+        ></fa-icon>
+      </div>
+
+      <form
+        name="registrationForm"
+        id="form"
+        #addEmployeeToProjectForm="ngForm"
+      >
+        <div
+          ngModel="{{ modalService.addEmployeeProject?.id }}"
+          type="hidden"
+          name="id"
+        ></div>
+
+        <div
+          ngModel="{{ modalService.addEmployeeProject?.projectName }}"
+          type="hidden"
+          name="projectName"
+        ></div>
+
+        <div
+          ngModel="{{ modalService.addEmployeeProject?.projectDetails }}"
+          type="hidden"
+          name="projectDetails"
+        ></div>
+
+        <div
+          ngModel="{{ modalService.addEmployeeProject?.progress }}"
+          type="hidden"
+          name="progress"
+        ></div>
+
+        <div
+          ngModel="{{ modalService.addEmployeeProject?.deadline }}"
+          type="hidden"
+          name="deadline"
+        ></div>
+
+        <!-- <div class="input-control" *ngFor="let employee of employeesAvailable">
+          <div id="firstName-error"></div>
+          <div class="user-box">
+            <input
+              type="checkbox"
+              id="{{ employee.id }}"
+              value="{{ employee.id }}"
+              class="employeeCheckBox"
+            />
+            <label for="{{ employee.id }}"> {{ employee.firstName }} </label>
+          </div>
+        </div> -->
+
+        <button
+          class="submit-btn"
+          role="button"
+          type="button"
+          (click)="onAddEmployeesToProject(addEmployeeToProjectForm.value)"
+        >
+          Add Employees
+        </button>
+      </form>
+      <div class="membercard-list">
+        <app-membercard
+          class="membercard"
+          *ngFor="let employee of employeesAvailable"
+          [employee]="employee"
+          (click)="onAddEmployeesToArray(employee.id)"
+        ></app-membercard>
+      </div>
+    </div>
+  </body>
+</html>

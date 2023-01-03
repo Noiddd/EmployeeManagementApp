@@ -17,6 +17,7 @@ export class ProjectUpdateComponent {
   ) {}
 
   public onUpdateProject(project: Project): void {
+    console.log(project);
     document.getElementById('xicon')?.click();
 
     // passing project data into edit project
