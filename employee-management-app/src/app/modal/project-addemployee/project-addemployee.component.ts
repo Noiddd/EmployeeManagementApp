@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Employee } from 'src/app/employee';
 import { Project } from 'src/app/project';
@@ -47,6 +48,10 @@ export class ProjectAddemployeeComponent {
 
   public onAddEmployeesToProject(project: Project): void {
     document.getElementById('xicon')?.click();
+
+    console.log(project);
+
+    console.log(this.employeeToAdd);
 
     this.projectService
       .addEmployeeToProject(project, this.employeeToAdd)
