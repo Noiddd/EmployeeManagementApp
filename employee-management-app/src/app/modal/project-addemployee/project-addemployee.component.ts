@@ -50,7 +50,6 @@ export class ProjectAddemployeeComponent {
     document.getElementById('xicon')?.click();
 
     console.log(project);
-
     console.log(this.employeeToAdd);
 
     this.projectService
